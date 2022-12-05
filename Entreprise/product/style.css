@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  font-family: arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  grid-template-rows: 150px 600px 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+}
+
+.header{
+  grid-column: 2/-1;
+  grid-row: 1;
+
+  margin: auto;
+  font-size: 24px;
+  line-height: 100px;
+}
+
+.nav{
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+.container{
+  grid-column: 2/-1;
+  grid-row: 2;
+}
+
+.main-page{
+  background: rgba(255, 255, 255, .3);
+  padding: 3rem;
+  height: 470px;
+  width: 900px;
+  border-radius: 60px;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+  text-align: center;
+  margin: auto;
+}
+
+.container-1, .container-2, .container-3 {
+  position: relative;
+  width: 596.8px;
+}
+
+.drop {
+  background: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+.drop-1 {
+  height: 80px; width: 80px;
+  top: -20px; left: -40px;
+  z-index: -1;
+}
+
+.drop-2 {
+  height: 80px; width: 80px;
+  bottom: -30px; right: -10px;
+}
+
+.drop-3 {
+  height: 100px; width: 100px;
+  bottom: 120px; right: -50px;
+  z-index: -1;
+}
+
+.drop-4 {
+  height: 120px; width: 120px;
+  top: -60px; right: -60px;
+}
+
+.drop-5 {
+  height: 60px; width: 60px;
+  bottom: 170px; left: 90px;
+  z-index: -1;
+}
+
+.link-1{
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.link-2{
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.link-3{
+  grid-column: 2/-1;
+  grid-row: 4;
+  margin: auto;
+}
+
+.table-1{
+  grid-column: 2/-1;
+  grid-row: 2;
+  margin: auto;
+}
+
+.table-2{
+  grid-column: 2/-1;
+  grid-row: 3;
+  margin: auto;
+}
+
+.table-3{
+  grid-column: 2/-1;
+  grid-row: 4;
+  margin: auto;
+}
+
+.footer{
+  grid-column: 2/-1;
+  grid-row: 5;
+  margin: auto;
+}
+
+
+
+/* Styliser les cartes */
+
+.link-1 a, .link-2 a, .link-3 a{
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
+.fiche{
+  margin: auto;
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  border-style: solid;
+  border-radius: 70px;
+
+  height: 320px;
+  width: 500px;
+
+  padding: 10px;  
+
+}
+
+
+/* New Stacking Context with Fixed */
+.side-nav {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+/* To hide the sub-nav */
+.wrapper {
+  height: 100vh;
+  width: 75px;
+}
+
+.three-dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.dot {
+  flex-shrink: 0;
+  margin: 10px 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+}
+.d1 {background: crimson;}
+.d2 {background: yellow;}
+.d3 {background: lightgreen;}
+
+.nav-bloc {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-bottom: 1px solid #f2f2f21e;
+}
+.nav-bloc:hover {
+  background: rgb(24, 24, 24);
+}
+.nav-bloc:hover .sub-nav {
+  transform: translateX(75px);
+}
+.nav-bloc svg {
+  width: 25px;
+  fill: #f2f2f2;
+  transition:  0.2s ease-in-out ;
+}
+.nav-bloc:hover  svg {
+  fill: #50bddf;
+}
+.sub-nav {
+  padding: 0px;
+  width: 200px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: white;
+  /* Hidden at the left side */
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+  border-right: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.sub-nav h2 {
+  font-family: open sans, sans-serif;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-nav ul {
+  list-style-type: none;
+}
+.sub-nav li {
+  padding: 15px 20px;
+}
+.sub-nav li:hover {
+  background: rgba(160, 160, 160, 0.555);
+}
+.sub-nav li a {
+   color: #f2f2f2;
+   text-decoration: none;
+}
+
+
+/* Tableau wallet */
+
+.main-page{
+  margin: auto;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+/* Bouton déconnection */
+
+.deconnexion-button{
+  grid-column: 3;
+  grid-row: 2;
+
+  width: 100px;
+  height: 50px;
+  text-align: center;
+
+  text-decoration: none;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+
+  color: whitesmoke;
+}
